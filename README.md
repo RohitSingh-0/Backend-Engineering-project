@@ -53,5 +53,3 @@ The goal is to build strong backend engineering fundamentals through practical i
 
 ## Project Status
 🚧 Active Learning & Development in Progress
-
-🚧 Active Learning & Development in Progress
