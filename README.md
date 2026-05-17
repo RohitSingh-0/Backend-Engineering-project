@@ -1,41 +1,57 @@
-# 🛒 Scalable E-Commerce Web Application (In Progress)
+# Backend Engineering Project 🚀
 
-This project is a full-stack e-commerce web application being built from scratch with a focus on clean architecture, scalability, and real-world implementation.
+This project is a backend-focused application being built to deeply understand real-world backend engineering concepts and scalable system design.
 
-## 🚀 Tech Stack
+The main focus of this project is not only feature implementation, but also understanding how backend systems work internally through clean architecture, authentication flows, database modeling, API design, middleware, and scalable request handling.
 
-* Frontend: React.js (planned)
-* Backend: Node.js, Express.js, TypeScript
-* Database: MongoDB
+## Tech Stack
 
-## 🧠 Architecture
+* Node.js
+* Express.js
+* MongoDB
+* JavaScript/Typescript
+  
+## Backend Concepts Covered
 
-* Layered Architecture (Route → Controller → Service → Database)
-* Modular folder structure for scalability
+* Layered Architecture
+  (Route → Controller → Service → Repository → Database)
 
-## 🔐 Features (In Progress)
+* Authentication & Authorization
+* JWT-based Authentication
+* Password Hashing with bcrypt
+* REST API Design
+* Middleware Architecture
+* Database Relationships
+* Schema & Model Design
+* Error Handling
+* Protected Routes
+* Scalable Folder Structure
 
-* Authentication & Role-Based Access Control (RBAC)
-* Product listing, search & filtering
-* Wishlist and Cart system
-* Order lifecycle tracking
-* Payment integration
+## Development Philosophy
 
-## 📈 Development Approach
+This project is being built with a strong focus on:
 
-* Writing business logic in service layer
-* Clean and maintainable code structure
-* Focus on scalability and performance
+* understanding core backend concepts deeply
+* writing clean and maintainable code
+* learning scalable architecture patterns
+* improving debugging and system design thinking
+* documenting concepts and implementation details
 
-## 🎯 Learning Approach
+## Documentation
 
-This project is being developed as part of a hands-on learning journey. Each feature is implemented from scratch with a focus on understanding core concepts, applying them in real scenarios, and improving through practical experience.
+The project also contains detailed backend documentation covering:
 
-## 🔄 Project Status
+* request lifecycle
+* authentication
+* database design
+* middleware
+* API architecture
+* backend fundamentals
 
-🚧 Work in Progress — actively developing and pushing updates regularly.
+The goal is to build strong backend engineering fundamentals through practical implementation and deep understanding rather than simply completing features.
 
-## 📌 Note
 
-The goal of this project is not just to complete features, but to build a strong foundation in full-stack development by understanding how each part of the system works internally.
+## Project Status
+🚧 Active Learning & Development in Progress
 
+🚧 Active Learning & Development in Progress
