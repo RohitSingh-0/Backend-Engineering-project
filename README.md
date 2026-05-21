@@ -1,41 +1,82 @@
-# 🛒 Scalable E-Commerce Web Application (In Progress)
+# 🚀 Backend Engineering Project
 
-This project is a full-stack e-commerce web application being built from scratch with a focus on clean architecture, scalability, and real-world implementation.
+This project is a backend-focused application being built to deeply understand real-world backend engineering concepts, scalable architecture, authentication systems, API design, and database modeling
 
-## 🚀 Tech Stack
+The main goal of this project is not only feature implementation, but also understanding how backend systems work internally through practical implementation and structured learning
 
-* Frontend: React.js (planned)
-* Backend: Node.js, Express.js, TypeScript
-* Database: MongoDB
+## 🛠️ Tech Stack
 
-## 🧠 Architecture
+- Node.js
+- Express.js
+- MongoDB
+- JavaScript / Typescript
 
-* Layered Architecture (Route → Controller → Service → Database)
-* Modular folder structure for scalability
+## 🧠 Backend Architecture
 
-## 🔐 Features (In Progress)
+- Layered Architecture
+  (Route → Controller → Service → Repository → Database)
 
-* Authentication & Role-Based Access Control (RBAC)
-* Product listing, search & filtering
-* Wishlist and Cart system
-* Order lifecycle tracking
-* Payment integration
+- Modular and scalable folder structure
 
-## 📈 Development Approach
+- Separation of concerns for maintainability
 
-* Writing business logic in service layer
-* Clean and maintainable code structure
-* Focus on scalability and performance
+## 🔐 Backend Concepts Covered
 
-## 🎯 Learning Approach
+- Authentication & Authorization
+- JWT-based Authentication
+- Password Hashing with bcrypt
+- Middleware Architecture
+- Protected Routes
+- REST API Design
+- Database Relationships
+- Schema & Model Design
+- Request Lifecycle
+- Error Handling
+- Scalable Backend Structure
 
-This project is being developed as part of a hands-on learning journey. Each feature is implemented from scratch with a focus on understanding core concepts, applying them in real scenarios, and improving through practical experience.
+## 📚 Documentation
+
+This project also contains detailed backend engineering documentation covering:
+
+- backend fundamentals
+- request lifecycle
+- authentication
+- database design
+- API design
+- middleware architecture
+
+The goal of these docs is to deeply understand backend concepts instead of only implementing features
+
+## 📈 Development Philosophy
+
+- Writing clean and maintainable backend code
+- Understanding system design step-by-step
+- Building scalable backend architecture
+- Improving debugging and backend reasoning skills
+- Learning through implementation instead of tutorials
 
 ## 🔄 Project Status
 
-🚧 Work in Progress — actively developing and pushing updates regularly.
+🚧 Active Learning & Development in Progress
 
-## 📌 Note
+## 📅 Progress Log
 
-The goal of this project is not just to complete features, but to build a strong foundation in full-stack development by understanding how each part of the system works internally.
+### March 31
+- Implemented signup flow using async/await
+- Integrated bcrypt for password hashing
+- Understood difference between synchronous and asynchronous operations
 
+### Authentication System
+- Implemented login flow
+- Added JWT token generation
+- Understood stateless authentication
+- Explored bcrypt hashing and salt concepts
+
+### Backend Architecture
+- Implemented layered architecture
+- Separated controller, service and repository logic
+- Improved backend scalability and maintainability thinking
+
+### Documentation System
+- Added structured backend engineering documentation
+- Documented request lifecycle, authentication, database design, APIs and middleware
