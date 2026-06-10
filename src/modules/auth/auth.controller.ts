@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import { authService } from "./auth.service.js";
-import type { SignupData } from "./auth.types.js";
+import type { SignupData } from "../../types/auth.types.js";
 
 export const authController = {
   async signup(req: Request, res: Response) {
@@ -32,6 +32,14 @@ export const authController = {
   },
 
   async profile(req: Request, res: Response) {
-    res.send("profile valid");
+    try {
+      const userId: string = req.userId as string;
+      const profile = await authService.profile(userId);
+      res.send({ id: profile.id, email: profile.email });
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(400).send(error.message);
+      }
+    }
   },
 };

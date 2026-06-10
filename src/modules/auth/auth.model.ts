@@ -10,4 +10,4 @@ import mongoose from "mongoose"
       required: true,  
    }
 })
-export const user = mongoose.model("User" , userSchema)
+export const user = mongoose.model("User" , userSchema);

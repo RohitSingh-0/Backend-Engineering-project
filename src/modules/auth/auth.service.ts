@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
 import { authRepository } from "./auth.repository.js";
-import type { SignupData, User, UserResponse } from "./auth.types.js";
+import type { SignupData, User, UserResponse } from "../../types/auth.types.js";
 
 export const authService = {
   async signup(data: SignupData): Promise<UserResponse> {
@@ -25,7 +25,6 @@ export const authService = {
 
   async login(data: { email: string; password: string }) {
     const { email, password } = data;
-
     const user = await authRepository.findByEmail(email);
 
     if (!user) {
@@ -37,6 +36,7 @@ export const authService = {
     if (!isMatch) {
       throw new Error("Incorrect password");
     }
+    console.log(user.id);
 
     const token = JWT.sign({ userId: user.id }, process.env.JWT_SECRET as string, {
       expiresIn: "1h",
@@ -46,4 +46,13 @@ export const authService = {
       token,
     };
   },
+
+  async profile(userId: string) {
+    const existingUser = await authRepository.findById(userId);
+
+    if (!existingUser) {
+      throw new Error("profile not found");
+    }
+    return existingUser;
+  }
 };

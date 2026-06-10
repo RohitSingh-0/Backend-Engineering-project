@@ -99,7 +99,7 @@ Commonly used in:
 
 - simple web applications
 - traditional web systems
-- PostgreSQL
+### PostgreSQL
 
 PostgreSQL is more advanced and feature-rich.
 
@@ -109,7 +109,6 @@ It is known for:
 - advanced queries
 - scalability
 - enterprise-level systems
-- What is a Schema?
 
 # What is a Schema?
 

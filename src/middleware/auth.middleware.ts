@@ -18,18 +18,17 @@ export const middleware = (req: Request, res: Response, next: NextFunction): voi
   }
 
   try {
-
-    jwt.verify(
+    const decoded = jwt.verify(
       token,
       process.env.JWT_SECRET as string
-    );
+    ) as { userId: string };
+
+    req.userId = decoded.userId;
 
     next();
 
   } catch (error) {
-
     res.status(401).send("detail mismatch");
-
   }
 
 };
