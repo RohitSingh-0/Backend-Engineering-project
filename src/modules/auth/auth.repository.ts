@@ -14,5 +14,10 @@ export const authRepository = {
   async findById(id: string) {
     const existingUser = await user.findById(id);
     return existingUser;
+  },
+  async updateProfile(userId: string, data: any) {
+    const returnProfile = await user.findByIdAndUpdate(userId, data, {new : true});
+    return returnProfile;
   }
+
 };

@@ -42,4 +42,18 @@ export const authController = {
       }
     }
   },
+
+  async updateProfile(req: Request, res: Response) {
+    try {
+    const updateData = req.body;
+    const userId: string = req.userId as string;
+    const updateProfile = await authService.updateProfile(userId, updateData);
+    res.send({id: updateProfile.id , email: updateProfile.email})
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(400).send(error.message);
+      }
+    }
+
+  }
 };

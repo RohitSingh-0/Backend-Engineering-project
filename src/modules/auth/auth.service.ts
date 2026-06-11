@@ -54,5 +54,29 @@ export const authService = {
       throw new Error("profile not found");
     }
     return existingUser;
+  },
+
+  async updateProfile(userId: string, updateData: any) {
+
+    if (Object.keys(updateData).length === 0) {
+      throw new Error("No update updateData provided");
+    }
+    if (!updateData.email) {
+      throw new Error("Email field is required");
+    }
+    if (updateData.email.trim() === "") {
+      throw new Error("Email cannot be empty");
+    }
+    const existingUser = await authRepository.findById(userId);
+    if (!existingUser) {
+      throw new Error("user not found")
+    }
+    if (existingUser.email == updateData.email) {
+      throw new Error("You enter same mail ")
+    }
+
+    const updatedData = await authRepository.updateProfile(userId, updateData);
+    return updatedData;
+
   }
 };
