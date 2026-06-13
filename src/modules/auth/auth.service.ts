@@ -38,9 +38,13 @@ export const authService = {
     }
     console.log(user.id);
 
-    const token = JWT.sign({ userId: user.id }, process.env.JWT_SECRET as string, {
-      expiresIn: "1h",
-    });
+    const token = JWT.sign(
+      { userId: user.id },
+      process.env.JWT_SECRET as string,
+      {
+        expiresIn: "1h",
+      },
+    );
 
     return {
       token,
@@ -57,9 +61,8 @@ export const authService = {
   },
 
   async updateProfile(userId: string, updateData: any) {
-
     if (Object.keys(updateData).length === 0) {
-      throw new Error("No update updateData provided");
+      throw new Error("No updateData provided");
     }
     if (!updateData.email) {
       throw new Error("Email field is required");
@@ -69,14 +72,40 @@ export const authService = {
     }
     const existingUser = await authRepository.findById(userId);
     if (!existingUser) {
-      throw new Error("user not found")
+      throw new Error("user not found");
     }
     if (existingUser.email == updateData.email) {
-      throw new Error("You enter same mail ")
+      throw new Error("You enter same mail ");
     }
 
     const updatedData = await authRepository.updateProfile(userId, updateData);
+    if (!updatedData) {
+      throw new Error("Profile update failed");
+    }
     return updatedData;
-
-  }
+  },
+  async changePassword(userId: string, oldPassword: string, newPassword: string) {
+    if (newPassword.trim() === "") {
+      throw new Error("Enter new password");
+    }
+    if (oldPassword.trim() === "") {
+      throw new Error("Enter old password");
+    }
+    const existingUser = await authRepository.findById(userId);
+    if (!existingUser) {
+      throw new Error("User not found");
+    }
+    const isPasswordMatch = await bcrypt.compare(oldPassword, existingUser.password);
+    if (!isPasswordMatch) {
+      throw new Error("Incorrect old password");
+    }
+    if (oldPassword === newPassword) {
+      throw new Error("New password must be different from current password");
+    }
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await authRepository.updatePassword(userId, hashedPassword);
+    return {
+      message: "Password updated successfully"
+    }
+  },
 };

@@ -18,6 +18,10 @@ export const authRepository = {
   async updateProfile(userId: string, data: any) {
     const returnProfile = await user.findByIdAndUpdate(userId, data, {new : true});
     return returnProfile;
-  }
+  },
+  async updatePassword(userId: string , hashedPassword: string) {
+    const updatedUser = await user.findByIdAndUpdate(userId, {password: hashedPassword}, {new : true});
+    return updatedUser;
+  },
 
 };
