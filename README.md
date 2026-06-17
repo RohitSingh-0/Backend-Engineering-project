@@ -1,57 +1,154 @@
-<<<<<<< HEAD
-# 🚀 Backend Engineering Project
+# 🔐 Authentication Backend API
 
-This project is a backend-focused application being built to deeply understand real-world backend engineering concepts, scalable architecture, authentication systems, API design, and database modeling
+A backend authentication system built with Node.js, Express.js, MongoDB, and TypeScript following a layered architecture approach.
+This project implements secure user authentication, authorization, profile management, and password security features while maintaining a clean and scalable code structure.
 
-The main goal of this project is not only feature implementation, but also understanding how backend systems work internally through practical implementation and structured learning
+## 🚀 Features
+
+### Authentication
+
+* User Registration (Signup)
+* User Login
+* JWT-based Authentication
+* Password Hashing using bcrypt
+
+### User Management
+
+* Get Authenticated User Profile
+* Update User Profile
+* Change Password
+
+### Security
+
+* Protected Routes using JWT Middleware
+* Email Format Validation
+* Password Strength Validation
+* Secure Password Storage
+
+### Architecture
+
+* Layered Architecture
+* Separation of Concerns
+* Modular Folder Structure
+* TypeScript Type Safety
+
+---
 
 ## 🛠️ Tech Stack
 
-- Node.js
-- Express.js
-- MongoDB
-- JavaScript / Typescript
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* TypeScript
+* JWT (jsonwebtoken)
+* bcrypt
 
-## 🧠 Backend Architecture
+## 📂 Project Structure
 
-- Layered Architecture
-  (Route → Controller → Service → Repository → Database)
+src
+├── controllers
+├── services
+├── repositories
+├── routes
+├── middleware
+├── models
+├── types
+├── utils
+└── config
 
-- Modular and scalable folder structure
+### Request Flow
 
-- Separation of concerns for maintainability
+Route
+↓
+Controller
+↓
+Service
+↓
+Repository
+↓
+Database
 
-## 🔐 Backend Concepts Covered
+## 🔑 API Endpoints
 
-- Authentication & Authorization
-- JWT-based Authentication
-- Password Hashing with bcrypt
-- Middleware Architecture
-- Protected Routes
-- REST API Design
-- Database Relationships
-- Schema & Model Design
-- Request Lifecycle
-- Error Handling
-- Scalable Backend Structure
+### Authentication
+
+#### Register User
+
+```http
+POST /signup
+```
+
+#### Login User
+
+```http
+POST /login
+```
+
+### User Profile
+
+#### Get Profile
+
+```http
+GET /profile
+```
+
+#### Update Profile
+
+```http
+PATCH /profile
+```
+
+### Password Management
+
+#### Change Password
+
+```http
+PATCH /change-password
+```
+
+## ⚙️ Environment Variables
+
+Create a `.env` file:
+
+``env
+PORT=5000
+JWT_SECRET=your_jwt_secret
+MONGODB_URI=your_mongodb_connection_string
+``
+
+## 📦 Installation
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+npm install
+npm run dev
+```
 
 ## 📚 Documentation
 
-This project also contains detailed backend engineering documentation covering:
+Detailed documentation is available inside the `docs` folder covering:
 
-- backend fundamentals
-- request lifecycle
-- authentication
-- database design
-- API design
-- middleware architecture
+- Backend Fundamentals
+- Request Lifecycle
+- Authentication & Authorization
+- JWT
+- Database Concepts
+- API Documentation
+- Middleware Flow
 
-The goal of these docs is to deeply understand backend concepts instead of only implementing features
+## Learning Outcomes
 
-## 📈 Development Philosophy
+Through this project, I gained hands-on experience with:
 
-- Writing clean and maintainable backend code
-- Understanding system design step-by-step
-- Building scalable backend architecture
-- Improving debugging and backend reasoning skills
-- Learning through implementation instead of tutorials
+* JWT Authentication
+* Password Hashing & Verification
+* Middleware Development
+* Protected Routes
+* MongoDB & Mongoose
+* Layered Architecture
+* TypeScript Integration
+* Input Validation
+* Error Handling
+* Backend API Development

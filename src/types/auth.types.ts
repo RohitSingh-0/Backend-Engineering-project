@@ -12,3 +12,7 @@ export type User = {
 export type UserResponse = {
   email: string;
 };
+
+export type UpdateProfileData = {
+  email: string;
+};

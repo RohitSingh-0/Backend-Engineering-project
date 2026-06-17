@@ -26,7 +26,7 @@ export const authController = {
       if (error instanceof Error) {
         res.status(400).send(error.message);
       } else {
-        res.status(400).send("incorrect password");
+        res.status(500).send("Internal Server Error");
       }
     }
   },
@@ -39,6 +39,8 @@ export const authController = {
     } catch (error) {
       if (error instanceof Error) {
         res.status(400).send(error.message);
+      } else {
+        res.status(500).send("Internal Server Error")
       }
     }
   },
@@ -52,6 +54,8 @@ export const authController = {
     } catch (error) {
       if (error instanceof Error) {
         res.status(400).send(error.message);
+      } else {
+        res.status(500).send("Internal Server Error")
       }
     }
   },
@@ -63,9 +67,12 @@ export const authController = {
       const newPassword = req.body.newPassword;
       const updatedPassword = await authService.changePassword(userId, oldPassword, newPassword);
       res.send(updatedPassword);
-    } catch (error) {
+    }
+    catch (error) {
       if (error instanceof Error) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message);
+      } else {
+        res.status(500).send("Internal Server Error");
       }
     }
   }
